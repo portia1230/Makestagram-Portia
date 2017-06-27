@@ -44,6 +44,9 @@
 		83B240FE1EFCDC6600714322 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B240FD1EFCDC6600714322 /* Post.swift */; };
 		83B241001EFCE37400714322 /* UIImage+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B240FF1EFCE37400714322 /* UIImage+Size.swift */; };
 		83B241021EFCE48000714322 /* StorageReference+Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B241011EFCE48000714322 /* StorageReference+Post.swift */; };
+		83CCF4D61F0210F100BDE5E7 /* FollowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CCF4D51F0210F100BDE5E7 /* FollowService.swift */; };
+		83CCF4D81F02185600BDE5E7 /* FindFriends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83CCF4D71F02185600BDE5E7 /* FindFriends.storyboard */; };
+		83CCF4DC1F021D0900BDE5E7 /* FindFriendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CCF4DB1F021D0900BDE5E7 /* FindFriendsCell.swift */; };
 		83F056101F01A7500062B99A /* btn_heart_black_outline.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F056071F01A7500062B99A /* btn_heart_black_outline.png */; };
 		83F056111F01A7500062B99A /* btn_heart_black_outline@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F056081F01A7500062B99A /* btn_heart_black_outline@2x.png */; };
 		83F056121F01A7500062B99A /* btn_heart_black_outline@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F056091F01A7500062B99A /* btn_heart_black_outline@3x.png */; };
@@ -101,6 +104,9 @@
 		83B240FF1EFCE37400714322 /* UIImage+Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+Size.swift"; path = "Makestagram/Extensions/UIImage+Size.swift"; sourceTree = "<group>"; };
 		83B241011EFCE48000714322 /* StorageReference+Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "StorageReference+Post.swift"; path = "Makestagram/Extensions/StorageReference+Post.swift"; sourceTree = "<group>"; };
 		83BA25AF1EFFAC000005E9D3 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		83CCF4D51F0210F100BDE5E7 /* FollowService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FollowService.swift; path = Makestagram/Services/FollowService.swift; sourceTree = "<group>"; };
+		83CCF4D71F02185600BDE5E7 /* FindFriends.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = FindFriends.storyboard; path = Storyboards/FindFriends.storyboard; sourceTree = "<group>"; };
+		83CCF4DB1F021D0900BDE5E7 /* FindFriendsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FindFriendsCell.swift; path = Controllers/FindFriendsCell.swift; sourceTree = "<group>"; };
 		83F056071F01A7500062B99A /* btn_heart_black_outline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_heart_black_outline.png; sourceTree = "<group>"; };
 		83F056081F01A7500062B99A /* btn_heart_black_outline@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_heart_black_outline@2x.png"; sourceTree = "<group>"; };
 		83F056091F01A7500062B99A /* btn_heart_black_outline@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_heart_black_outline@3x.png"; sourceTree = "<group>"; };
@@ -200,6 +206,7 @@
 				8345E4F51F018B0E00F13AC3 /* PostImageCell.swift */,
 				836253B61F01A3DE00F9A6B2 /* PostHeaderCell.swift */,
 				83F056191F01A7A90062B99A /* PostActionCell.swift */,
+				83CCF4DB1F021D0900BDE5E7 /* FindFriendsCell.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -208,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				8396843B1EFAD6970080F8B5 /* Main.storyboard */,
+				83CCF4D71F02185600BDE5E7 /* FindFriends.storyboard */,
 				83A740AF1EFCE88D00440EAE /* Home.storyboard */,
 				839684451EFAD8AB0080F8B5 /* Login.storyboard */,
 			);
@@ -227,6 +235,7 @@
 		83B240B31EFB307100714322 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				83CCF4D51F0210F100BDE5E7 /* FollowService.swift */,
 				83B240B01EFB306000714322 /* UserService.swift */,
 				83B240F91EFC821500714322 /* StorageService.swift */,
 				83B240FB1EFC845100714322 /* PostService.swift */,
@@ -363,6 +372,7 @@
 				83F056151F01A7500062B99A /* btn_heart_red_solid@3x.png in Resources */,
 				83B240EA1EFC3B4400714322 /* tab_plus_black@2x.png in Resources */,
 				83B240ED1EFC3B4400714322 /* tab_profile_black@2x.png in Resources */,
+				83CCF4D81F02185600BDE5E7 /* FindFriends.storyboard in Resources */,
 				83B240E81EFC3B4400714322 /* tab_home_black@3x.png in Resources */,
 				83B240EC1EFC3B4400714322 /* tab_profile_black.png in Resources */,
 				83B240E71EFC3B4400714322 /* tab_home_black@2x.png in Resources */,
@@ -431,6 +441,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83CCF4D61F0210F100BDE5E7 /* FollowService.swift in Sources */,
 				83B240AA1EFAEF8A00714322 /* User.swift in Sources */,
 				83B240FA1EFC821500714322 /* StorageService.swift in Sources */,
 				8396844A1EFAD94B0080F8B5 /* LoginViewController.swift in Sources */,
@@ -440,6 +451,7 @@
 				837F43D11F01FE4D00E9C522 /* LikeService.swift in Sources */,
 				83B240FE1EFCDC6600714322 /* Post.swift in Sources */,
 				8345E4F61F018B0E00F13AC3 /* PostImageCell.swift in Sources */,
+				83CCF4DC1F021D0900BDE5E7 /* FindFriendsCell.swift in Sources */,
 				83B241001EFCE37400714322 /* UIImage+Size.swift in Sources */,
 				83B240F71EFC79F000714322 /* MGPhotoHelper.swift in Sources */,
 				83B240D51EFC250500714322 /* Storyboard+Utility.swift in Sources */,

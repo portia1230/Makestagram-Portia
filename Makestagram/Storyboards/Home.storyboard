@@ -63,7 +63,7 @@
                                             <outlet property="usernameLabel" destination="FRK-m6-AI4" id="ks8-Vk-VVz"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostImageCell" rowHeight="375" id="Xhv-fb-vyx" customClass="PostImageCell" customModule="Makestagram" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PostImageCell" rowHeight="375" id="Xhv-fb-vyx" customClass="PostImageCell" customModule="Makestagram" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="82" width="375" height="375"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xhv-fb-vyx" id="vjE-fs-caF">

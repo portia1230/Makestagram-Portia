@@ -16,6 +16,7 @@ class User : NSObject {
     private static var _current : User?
     let uid: String
     let username: String
+    var isFollowed = false
     
     // MARK: - Init
     
