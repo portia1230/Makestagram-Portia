@@ -26,7 +26,7 @@ class Post {
         self.imageURL = imageURL
         self.imageHeight = imageHeight
         self.creationDate = Date()
-        self.likeCount = 0
+        self.likeCount = 2571927
         self.poster = User.current
     }
     

@@ -16,7 +16,9 @@ class HomeViewController: UIViewController{
     //properties
     
     @IBOutlet weak var tableView: UITableView!
+    
     var posts = [Post]()
+    
     let timestampFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .short
@@ -24,18 +26,26 @@ class HomeViewController: UIViewController{
         return dateFormatter
     }()
     
+    let refreshControl = UIRefreshControl()
     
     
    //functions
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         
         configureTableView()
-        
-        UserService.posts(for: User.current) { (posts) in
+        reloadTimeline()
+    }
+    
+    func reloadTimeline() {
+        UserService.timeline { (posts) in
             self.posts = posts
+            
+            if self.refreshControl.isRefreshing {
+                self.refreshControl.endRefreshing()
+            }
+            
             self.tableView.reloadData()
         }
     }
@@ -43,6 +53,9 @@ class HomeViewController: UIViewController{
     func configureTableView(){
         tableView.tableFooterView = UIView()
         tableView.separatorStyle = .none
+        
+        refreshControl.addTarget(self, action: #selector(reloadTimeline), for: .valueChanged)
+        tableView.addSubview(refreshControl)
     }
     
 }
