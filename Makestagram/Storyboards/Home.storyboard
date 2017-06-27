@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--Makestagram-->
         <scene sceneID="I83-3l-ThZ">
             <objects>
                 <viewController id="pG8-iD-PfI" customClass="HomeViewController" customModule="Makestagram" customModuleProvider="target" sceneMemberID="viewController">
@@ -67,10 +67,10 @@
                                         <rect key="frame" x="0.0" y="82" width="375" height="375"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xhv-fb-vyx" id="vjE-fs-caF">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="374.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vju-8U-Mgm">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vju-8U-Mgm">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                                                 </imageView>
                                             </subviews>
@@ -89,7 +89,7 @@
                                         <rect key="frame" x="0.0" y="457" width="375" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="J3j-TA-5C7" id="ua0-6A-Z1x">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="46"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="45.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYE-hg-vG7">
@@ -103,6 +103,7 @@
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="43.5" id="qV4-0e-b5u"/>
                                                     </constraints>
                                                     <state key="normal" image="btn_heart_black_outline.png"/>
+                                                    <state key="selected" image="btn_heart_red_solid.png"/>
                                                     <connections>
                                                         <action selector="likeButtonTapped:" destination="J3j-TA-5C7" eventType="touchUpInside" id="P51-Er-Nun"/>
                                                     </connections>
@@ -161,7 +162,7 @@
                             <constraint firstItem="ape-k9-hfQ" firstAttribute="leading" secondItem="eyr-rC-JFq" secondAttribute="leading" id="vDY-Ib-99e"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="zbq-Fu-Jwg"/>
+                    <navigationItem key="navigationItem" title="Makestagram" id="zbq-Fu-Jwg"/>
                     <connections>
                         <outlet property="tableView" destination="ape-k9-hfQ" id="I1m-yS-fA7"/>
                     </connections>
@@ -195,6 +196,7 @@
     </scenes>
     <resources>
         <image name="btn_heart_black_outline.png" width="24" height="24"/>
+        <image name="btn_heart_red_solid.png" width="24" height="24"/>
         <image name="btn_options_black.png" width="24" height="24"/>
         <image name="tab_home_black.png" width="25" height="25"/>
     </resources>

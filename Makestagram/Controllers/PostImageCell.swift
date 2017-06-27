@@ -14,7 +14,7 @@ class PostImageCell: UITableViewCell {
     
     
     @IBOutlet weak var postImageView: UIImageView!
-    
+    static var height : CGFloat = 375
     
     //functions
     override func awakeFromNib() {
