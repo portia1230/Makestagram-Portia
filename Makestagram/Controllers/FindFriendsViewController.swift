@@ -20,22 +20,26 @@ class FindFriendsViewController: UIViewController{
     
     
     //VC lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.tableFooterView = UIView()
-        tableView.rowHeight = 71
+        tableView.rowHeight = 60
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
         super.viewWillAppear(animated)
         
         UserService.usersExcludingCurrentUser { [unowned self] (users) in
+            
             self.users = users
             
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
+            
         }
     }
     
@@ -44,7 +48,11 @@ class FindFriendsViewController: UIViewController{
 //Find Friends Cell delegate
 
 extension FindFriendsViewController: FindFriendsCellDelegate {
+    
+    //did tap follow button
     func didTapFollowButton(_ followButton: UIButton, on cell: FindFriendsCell) {
+        
+        
         guard let indexPath = tableView.indexPath(for: cell) else { return }
         
         followButton.isUserInteractionEnabled = false
@@ -54,12 +62,12 @@ extension FindFriendsViewController: FindFriendsCellDelegate {
             defer {
                 followButton.isUserInteractionEnabled = true
             }
-            
+                
             guard success else { return }
             
             followee.isFollowed = !followee.isFollowed
             self.tableView.reloadRows(at: [indexPath], with: .none)
-        }
+            }
     }
 }
 
@@ -73,7 +81,8 @@ extension FindFriendsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FindFriendsCell") as! FindFriendsCell
-        cell.delegate = self as! FindFriendsCellDelegate
+      
+        cell.delegate = self
         configure(cell: cell, atIndexPath: indexPath)
         
         return cell

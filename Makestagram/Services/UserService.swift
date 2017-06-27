@@ -100,6 +100,7 @@ struct UserService {
             dispatchGroup.notify(queue: .main, execute: {
                 completion(users)
             })
+            
         })
     }
     

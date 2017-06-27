@@ -177,7 +177,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="UuQ-kl-HxG" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="frJ-SX-v3R">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="frJ-SX-v3R">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -192,6 +192,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="7q2-7w-XAT"/>
+        <segue reference="9s0-yo-7tP"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -2,4 +2,70 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Makestagram/Services/UserService.swift"
+            timestampString = "520274229.779199"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "usersExcludingCurrentUser(completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static Makestagram.UserService.(usersExcludingCurrentUser (completion : (Swift.Array&lt;Makestagram.User&gt;) -&gt; ()) -&gt; ()).(closure #1)"
+                  moduleName = "Makestagram"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/portia/Desktop/makeschool%20files/projects/Makestagram/Makestagram/Services/UserService.swift"
+                  timestampString = "520274488.208511"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "100"
+                  endingLineNumber = "100"
+                  offsetFromSymbolStart = "816">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static Makestagram.UserService.(usersExcludingCurrentUser (completion : (Swift.Array&lt;Makestagram.User&gt;) -&gt; ()) -&gt; ()).(closure #1).(closure #3)"
+                  moduleName = "Makestagram"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/portia/Desktop/makeschool%20files/projects/Makestagram/Makestagram/Services/UserService.swift"
+                  timestampString = "520274488.210223"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Makestagram/Controllers/FindFriendsViewController.swift"
+            timestampString = "520279113.715669"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "configure(cell:atIndexPath:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

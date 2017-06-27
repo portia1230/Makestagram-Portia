@@ -23,15 +23,18 @@ struct FollowService{
         }
     }
     
-    private static func unfollowUser (_ user: User, forCurrentUserWithSuccess success: @escaping (Bool)-> Void){
+    private static func unfollowUser(_ user: User, forCurrentUserWithSuccess success: @escaping (Bool) -> Void) {
         let currentUID = User.current.uid
-        let followData = ["followers\(user.uid)/\(currentUID)": NSNull(), "following/\(currentUID)/\(user.uid)" : NSNull()]
+        let followData = ["followers/\(user.uid)/\(currentUID)" : NSNull(),
+                          "following/\(currentUID)/\(user.uid)" : NSNull()]
+        
         let ref = Database.database().reference()
-        ref.updateChildValues(followData){ (error, _) in
+        ref.updateChildValues(followData) { (error, ref) in
             if let error = error {
                 assertionFailure(error.localizedDescription)
             }
-            success(error == nil )
+            
+            success(error == nil)
         }
     }
     
@@ -45,7 +48,7 @@ struct FollowService{
     
     static func isUserFollowed(_ user: User, byCurrentUserWithCompletion completion: @escaping (Bool) -> Void) {
         let currentUID = User.current.uid
-        let ref = Database.database().reference()
+        let ref = Database.database().reference().child("followers").child(user.uid)
         
         ref.queryEqual(toValue: nil, childKey: currentUID).observeSingleEvent(of: .value, with: { (snapshot) in
             if let _ = snapshot.value as? [String : Bool] {
@@ -55,4 +58,5 @@ struct FollowService{
             }
         })
     }
+    
 }

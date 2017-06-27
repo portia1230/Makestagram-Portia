@@ -24,8 +24,9 @@ class FindFriendsCell : UITableViewCell{
     
     //IBAction
     
-    @IBAction func followButtonTapped(_ sender: Any) {
-        delegate?.didTapFollowButton(sender as! UIButton, on: self)
+    @IBAction func followButtonTapped(_ sender: UIButton) {
+        delegate?.didTapFollowButton(sender, on: self)
+        
     }
     
     //Cell lifecycle
@@ -37,8 +38,8 @@ class FindFriendsCell : UITableViewCell{
         followButton.layer.borderWidth = 1
         followButton.layer.cornerRadius = 6
         followButton.clipsToBounds = true
+        
         followButton.setTitle("Follow", for: .normal)
         followButton.setTitle("Following", for: .selected)
     }
-
 }
