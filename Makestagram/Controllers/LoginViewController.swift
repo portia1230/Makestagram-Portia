@@ -10,6 +10,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseAuthUI
 import FirebaseDatabase
+import FirebaseFacebookAuthUI
 
 typealias FIRUser = FirebaseAuth.User
 
@@ -32,9 +33,14 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginButtonTapped(_ sender: UIButton) {
         print ("login button tapped")
+        
         guard let authUI = FUIAuth.defaultAuthUI()
             else { return }
         authUI.delegate = self
+        
+        let providers:[FUIAuthProvider] = [FUIFacebookAuth()]
+        authUI.providers = providers
+        
         let authViewController = authUI.authViewController()
         present(authViewController, animated: true)
     }
