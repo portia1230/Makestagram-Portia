@@ -52,6 +52,14 @@ PODS:
   - FirebaseUI/Facebook (4.1.1):
     - FBSDKLoginKit (~> 4.0)
     - FirebaseUI/Auth
+  - FirebaseUI/Google (4.1.1):
+    - FirebaseUI/Auth
+    - GoogleSignIn (~> 4.0)
+  - GoogleSignIn (4.0.2):
+    - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
+    - GoogleToolboxForMac/NSString+URLArguments (~> 2.1)
+    - GTMOAuth2 (~> 1.0)
+    - GTMSessionFetcher/Core (~> 1.1)
   - GoogleToolboxForMac/DebugUtils (2.1.1):
     - GoogleToolboxForMac/Defines (= 2.1.1)
   - GoogleToolboxForMac/Defines (2.1.1)
@@ -62,7 +70,13 @@ PODS:
     - GoogleToolboxForMac/Defines (= 2.1.1)
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.1)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
+  - GTMOAuth2 (1.1.4):
+    - GTMSessionFetcher (~> 1.1)
+  - GTMSessionFetcher (1.1.10):
+    - GTMSessionFetcher/Full (= 1.1.10)
   - GTMSessionFetcher/Core (1.1.10)
+  - GTMSessionFetcher/Full (1.1.10):
+    - GTMSessionFetcher/Core (= 1.1.10)
   - Kingfisher (3.10.2)
 
 DEPENDENCIES:
@@ -74,6 +88,8 @@ DEPENDENCIES:
   - Firebase/Storage
   - FirebaseUI/Auth
   - FirebaseUI/Facebook
+  - FirebaseUI/Google
+  - GoogleSignIn
   - Kingfisher (~> 3.0)
 
 SPEC CHECKSUMS:
@@ -90,10 +106,12 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: 9fbf536668f4d3f0880e7438456dabd1376e294b
   FirebaseStorage: 8110a1ed2034c8fbfd83890d2acc9cdbbd99afec
   FirebaseUI: 5ebebe2c096c71f20abd1d43d0388958373bdaa0
+  GoogleSignIn: d7ad83f13480e1f30453471d00d19b5293ac46af
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
+  GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
   GTMSessionFetcher: 30d874b96d0d76028f61fbd122801e3f030d47db
   Kingfisher: 7297492bf8cec9b2e2dee3519f2219948580d98e
 
-PODFILE CHECKSUM: bb4deb07fe648c292551a8bb3d2dd3e103e4ff4b
+PODFILE CHECKSUM: bac578c267957831354722c343e774224bc9df56
 
 COCOAPODS: 1.2.0
