@@ -2,6 +2,19 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Quicksan-Bold.ttf</string>
+		<string>Quicksan-BoldItalic.ttf</string>
+		<string>Quicksan-ExtraBold.ttf</string>
+		<string>Quicksan-Italic.ttf</string>
+		<string>Quicksan-Light.ttf</string>
+		<string>Quicksan-ExtraBoldItalic.ttf</string>
+		<string>Quicksan-Regular.ttf</string>
+		<string>Quicksan-LightItalic.ttf</string>
+		<string>Quicksan-Semibold.ttf</string>
+		<string>Quicksan-SemiboldItalic.ttf</string>
+	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>

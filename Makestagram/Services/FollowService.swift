@@ -22,7 +22,25 @@ struct FollowService{
                 assertionFailure(error.localizedDescription)
                 success(false)
             }
-            
+            let dispatchGroup = DispatchGroup()
+            dispatchGroup.enter()
+            let followingCountRef = Database.database().reference().child("users").child(currentUID).child("following_count")
+            followingCountRef.runTransactionBlock({ (mutableData) -> TransactionResult in
+
+                let currentCount = mutableData.value as? Int ?? 0
+                mutableData.value = currentCount + 1
+                
+                return TransactionResult.success(withValue: mutableData)
+            })
+            dispatchGroup.enter()
+            let followerCountRef = Database.database().reference().child("users").child(user.uid).child("follower_count")
+            followerCountRef.runTransactionBlock({ (mutableData) -> TransactionResult in
+                let currentCount = mutableData.value as? Int ?? 0
+                mutableData.value = currentCount + 1
+                
+                return TransactionResult.success(withValue: mutableData)
+            })
+            dispatchGroup.enter()
             UserService.posts(for: user) { (posts) in
                 let postKeys = posts.flatMap { $0.key }
                 
@@ -35,8 +53,11 @@ struct FollowService{
                         assertionFailure(error.localizedDescription)
                     }
                     
-                    success(error == nil)
+                    dispatchGroup.leave()
                 })
+            }
+            dispatchGroup.notify(queue: .main) {
+                success(true)
             }
         }
     }
@@ -47,30 +68,51 @@ struct FollowService{
                           "following/\(currentUID)/\(user.uid)" : NSNull()]
         
         let ref = Database.database().reference()
-        ref.updateChildValues(followData) { (error, ref) in
+        ref.updateChildValues(followData) { (error, _) in
             if let error = error {
                 assertionFailure(error.localizedDescription)
+                success(false)
             }
+            let dispatchGroup = DispatchGroup()
             
-            success(error == nil)
-        }
-        
-        UserService.posts(for: user) { (posts) in
-            let postsKeys = posts.flatMap { $0.key }
-            var unfollowData = [String : Any]()
-            postsKeys.forEach {
-                unfollowData["timeline/\(currentUID)/\($0)"] = NSNull()
-            }
-            
-            ref.updateChildValues(unfollowData, withCompletionBlock: { (error, ref) in
-                if let error = error {
-                    assertionFailure(error.localizedDescription)
-                }
+            dispatchGroup.enter()
+            let followingCountRef = Database.database().reference().child("users").child(currentUID).child("following_count")
+            followingCountRef.runTransactionBlock({ (mutableData) -> TransactionResult in
                 
-                success(error == nil)
+                let currentCount = mutableData.value as? Int ?? 0
+                mutableData.value = currentCount - 1
+                
+                return TransactionResult.success(withValue: mutableData)
             })
+            dispatchGroup.enter()
+            let followerCountRef = Database.database().reference().child("users").child(user.uid).child("follower_count")
+            followerCountRef.runTransactionBlock({ (mutableData) -> TransactionResult in
+                let currentCount = mutableData.value as? Int ?? 0
+                mutableData.value = currentCount - 1
+                
+                return TransactionResult.success(withValue: mutableData)
+            })
+            dispatchGroup.enter()
+            UserService.posts(for: user) { (posts) in
+                let postKeys = posts.flatMap { $0.key }
+                var unfollowData = [String : Any]()
+                
+                postKeys.forEach { unfollowData["timeline/\(currentUID)/\($0)"] = NSNull() }
+                
+                ref.updateChildValues(unfollowData, withCompletionBlock: { (error, ref) in
+                    if let error = error {
+                        assertionFailure(error.localizedDescription)
+                    }
+                    
+                    dispatchGroup.leave()
+                })
+            }
+            dispatchGroup.notify(queue: .main) {
+                success(true)
+            }
         }
     }
+    
     static func setIsFollowing(_ isFollowing: Bool, fromCurrentUserTo followee: User, success: @escaping (Bool)->Void){
         if isFollowing{
             followUser(followee, forCurrentUserWithSuccess: success)
