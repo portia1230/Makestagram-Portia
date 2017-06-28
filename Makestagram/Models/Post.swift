@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseDatabase.FIRDataSnapshot
 
-class Post {
+class Post: MGKeyed {
     
     //properties
     var key: String?
@@ -26,7 +26,7 @@ class Post {
         self.imageURL = imageURL
         self.imageHeight = imageHeight
         self.creationDate = Date()
-        self.likeCount = 2571927
+        self.likeCount = 0
         self.poster = User.current
     }
     

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8345E4F61F018B0E00F13AC3 /* PostImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8345E4F51F018B0E00F13AC3 /* PostImageCell.swift */; };
 		836253B71F01A3DE00F9A6B2 /* PostHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836253B61F01A3DE00F9A6B2 /* PostHeaderCell.swift */; };
+		8379A5A11F031BD70016331F /* UITableView+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8379A5A01F031BD70016331F /* UITableView+Utility.swift */; };
+		8379A5A31F03557C0016331F /* MGPaginationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8379A5A21F03557C0016331F /* MGPaginationHelper.swift */; };
 		837F43D11F01FE4D00E9C522 /* LikeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837F43D01F01FE4D00E9C522 /* LikeService.swift */; };
 		83927DE31F0074EB0016836A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83927DE21F0074EB0016836A /* HomeViewController.swift */; };
 		8396841B1EFAD2B00080F8B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8396841A1EFAD2B00080F8B5 /* AppDelegate.swift */; };
@@ -66,6 +68,8 @@
 		5E81079DC1822D854EEDCDF5 /* Pods-Makestagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Makestagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Makestagram/Pods-Makestagram.debug.xcconfig"; sourceTree = "<group>"; };
 		8345E4F51F018B0E00F13AC3 /* PostImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostImageCell.swift; path = Controllers/PostImageCell.swift; sourceTree = "<group>"; };
 		836253B61F01A3DE00F9A6B2 /* PostHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostHeaderCell.swift; path = Controllers/PostHeaderCell.swift; sourceTree = "<group>"; };
+		8379A5A01F031BD70016331F /* UITableView+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UITableView+Utility.swift"; path = "Makestagram/Extensions/UITableView+Utility.swift"; sourceTree = "<group>"; };
+		8379A5A21F03557C0016331F /* MGPaginationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MGPaginationHelper.swift; path = Helpers/MGPaginationHelper.swift; sourceTree = "<group>"; };
 		837F43D01F01FE4D00E9C522 /* LikeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LikeService.swift; path = Makestagram/Services/LikeService.swift; sourceTree = "<group>"; };
 		83927DE21F0074EB0016836A /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = Controllers/HomeViewController.swift; sourceTree = "<group>"; };
 		839684171EFAD2B00080F8B5 /* Makestagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Makestagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -251,6 +255,7 @@
 				83B240D41EFC250500714322 /* Storyboard+Utility.swift */,
 				83B240FF1EFCE37400714322 /* UIImage+Size.swift */,
 				83B241011EFCE48000714322 /* StorageReference+Post.swift */,
+				8379A5A01F031BD70016331F /* UITableView+Utility.swift */,
 			);
 			name = Extensions;
 			path = ..;
@@ -288,6 +293,7 @@
 			isa = PBXGroup;
 			children = (
 				83B240F61EFC79F000714322 /* MGPhotoHelper.swift */,
+				8379A5A21F03557C0016331F /* MGPaginationHelper.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -455,8 +461,10 @@
 				83B241001EFCE37400714322 /* UIImage+Size.swift in Sources */,
 				83B240F71EFC79F000714322 /* MGPhotoHelper.swift in Sources */,
 				83B240D51EFC250500714322 /* Storyboard+Utility.swift in Sources */,
+				8379A5A11F031BD70016331F /* UITableView+Utility.swift in Sources */,
 				83B240F31EFC3C5700714322 /* FindFriendsViewController.swift in Sources */,
 				83B241021EFCE48000714322 /* StorageReference+Post.swift in Sources */,
+				8379A5A31F03557C0016331F /* MGPaginationHelper.swift in Sources */,
 				83927DE31F0074EB0016836A /* HomeViewController.swift in Sources */,
 				83B240D31EFC243C00714322 /* Constants.swift in Sources */,
 				83B240FC1EFC845100714322 /* PostService.swift in Sources */,
